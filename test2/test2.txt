@@ -1,0 +1,113 @@
+************************************************************************************
+__assertion_start
+
+ID: Create_set_LUN
+
+DESCRIPTION:
+   - Create one LUN, and do some necessary configuration
+   - Try to resize, export and Un-export the LUN
+   - Expect no error occur in the test process
+
+STRATEGY:
+   - Create one LUN, name it 'lun_test_1', and do necessary configuration, should success
+   - Expand the size of 'lun_test_1', should success
+   - Select a host, and export 'lun_test_1' to the selected host, should success
+   - Un-export 'lun_test_1', should success
+   - Remove 'lun_test_1', should success
+   - Do cleanup.
+
+TESTABILITY: explicit
+
+TEST_AUTOMATION_LEVEL: automated/manual
+
+__assertion_end
+*************************************************************************************
+
+
+
+************************************************************************************
+__assertion_start
+
+ID: Retrieve_LUN_information
+
+DESCRIPTION:
+   - Retrieve the related information of a LUN
+   - Expect no error occur in the test process
+
+STRATEGY:
+   - Create one lun, name it 'lun_test_2', and do necessary configuration
+   - Retrieve the size of 'lun_test_2', should success
+   - Retrieve host of 'lun_test_2', should success
+   - Retrieve the size and host information of 'lun_test_2', should success
+   - Remove 'lun_test_2', should success
+   - Do cleanup.
+
+TESTABILITY: explicit
+
+TEST_AUTOMATION_LEVEL: automated/manual
+
+__assertion_end
+*************************************************************************************
+
+
+
+************************************************************************************
+__assertion_start
+
+ID: Check_performance
+
+DESCRIPTION:
+   - Create several LUNs, and export them to different hosts, 
+     the performance of storage array should not be impacted.
+
+STRATEGY:
+   - Create ten LUNs, name it 'lun_test_1', 'lun_test_2' and so on, should success
+   - Export the new created LUNs to different hosts, should success 
+   - Check the performation of storage array, should now be impacted
+   - Remove LUNs
+   - Do cleanup.
+
+TESTABILITY: explicit
+
+TEST_AUTOMATION_LEVEL: automated/manual
+
+__assertion_end
+*************************************************************************************
+
+
+
+************************************************************************************
+__assertion_start
+
+ID: Check_performance
+
+DESCRIPTION:
+   - Create several LUNs, and export them to different hosts, 
+     the performance of storage array should not be impacted.
+
+STRATEGY:
+   - Create ten LUNs, name it 'lun_test_1', 'lun_test_2' and so on, should success
+   - Export the new created LUNs to different hosts, should success 
+   - Check the performation of storage array, should now be impacted
+   - Remove LUNs
+   - Do cleanup.
+
+TESTABILITY: explicit
+
+TEST_AUTOMATION_LEVEL: automated/manual
+
+__assertion_end
+*************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
