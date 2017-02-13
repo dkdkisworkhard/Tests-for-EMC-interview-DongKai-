@@ -16,7 +16,7 @@ public class Test1 {
 	@Produces(MediaType.TEXT_XML)
 	public synchronized String createLUN(@QueryParam("lunname")String lunname, @QueryParam("lunsize")int lunsize){
 		if(LUNsize.containsKsy(lunname)){
-			return "<createlun>" + lunname + " has exist, can't create a new one " + </createlun>;
+			return "<createlun>" + lunname + " has existed, can't create a new one " + </createlun>;
 		}else{
 			LUNlist.put(lunname, lunsize);
 		        return "<createlun>" + "Success!!" + lunname + " has been created!!!" + "</createlun>";
