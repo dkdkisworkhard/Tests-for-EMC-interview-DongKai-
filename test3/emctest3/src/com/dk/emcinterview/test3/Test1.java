@@ -14,7 +14,7 @@ public class Test1 {
 	@GET
 	@Path("/createlun")
 	@Produces(MediaType.TEXT_XML)
-	public String createLUN(@QueryParam("lunname")String lunname, @QueryParam("lunsize")int lunsize){
+	public synchronized String createLUN(@QueryParam("lunname")String lunname, @QueryParam("lunsize")int lunsize){
 		if(LUNsize.containsKsy(lunname)){
 			return "<createlun>" + lunname + " has exist, can't create a new one " + </createlun>;
 		}else{
@@ -27,7 +27,7 @@ public class Test1 {
 	@GET
 	@Path("/resizelun")
 	@Produces(MediaType.TEXT_XML)
-	public String resizeLUN(@QueryParam("lunname")String lunname, @QueryParam("lunsize")int lunsize){
+	public synchronized String resizeLUN(@QueryParam("lunname")String lunname, @QueryParam("lunsize")int lunsize){
 		if(LUNsize.containsKsy(lunname)){
 		        LUNlist.put(lunname, lunsize);
 			return "<resizelun>" + "The new size of " + lunname + " is " + LUNlist.get(lunname) + </resizelun>;
@@ -53,7 +53,7 @@ public class Test1 {
 	@GET
 	@Path("/removelun")
 	@Produces(MediaType.TEXT_XML)
-	public String removeLUN(@QueryParam("lunname")String lunname){
+	public synchronized String removeLUN(@QueryParam("lunname")String lunname){
 		if(LUNsize.containsKsy(lunname)){
 		        LUNlist.remove(lunname);
 			return "<removelun>" + "The lun " + lunname + "has been removed!!!" + </removelun>;
